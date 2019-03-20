@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -97,6 +98,8 @@ public class CloseWindow extends Thread {
 
             ptr.setEnabled(false);
             ptr.setOfferWindow(new JFrame("Banker's Offer"));
+            ptr.getOfferWindow().setUndecorated(true);
+            ptr.getOfferWindow().getRootPane().setBorder(BorderFactory.createLineBorder(Color.white, 4));
             int offer_window_width = 273, offer_window_height = 284;
             ptr.getOfferWindow().setSize(offer_window_width, offer_window_height);
             ptr.getOfferWindow().setLocation((int)(ptr.getLocation().getX() + ptr.getSize().getWidth() / 2) - (offer_window_width / 2), (int)(ptr.getLocation().getY() + ptr.getSize().getHeight() / 2) - (offer_window_height / 2));
@@ -118,13 +121,13 @@ public class CloseWindow extends Thread {
 
             if(converted_offer.equals("exchange")) {
                 the_offer = new JLabel("" + converted_offer, JLabel.CENTER);
-                the_offer.setFont(new Font("BOLD", Font.BOLD, 30));
+                the_offer.setFont(new Font("default", Font.BOLD, 30));
                 the_offer.setForeground(Color.YELLOW);
                 ptr.getOfferWindow().add(the_offer);
             }
             else {
                 the_offer = new JLabel("        $ " + converted_offer + "         ", JLabel.CENTER);
-                the_offer.setFont(new Font("BOLD", Font.BOLD, 30));
+                the_offer.setFont(new Font("default", Font.BOLD, 30));
                 the_offer.setForeground(Color.YELLOW);
                 ptr.getOfferWindow().add(the_offer);
             }

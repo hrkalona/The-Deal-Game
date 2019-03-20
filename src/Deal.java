@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -482,6 +483,7 @@ public class Deal extends Game  {
 
             setEnabled(false);
             offer_window = new JFrame("Open your briefcase");
+            offer_window.setUndecorated(true);
             int offer_window_width = 273, offer_window_height = 284;
             offer_window.setSize(offer_window_width, offer_window_height);
             offer_window.setLocation((int)(getLocation().getX() + getSize().getWidth() / 2) - (offer_window_width / 2), (int)(getLocation().getY() + getSize().getHeight() / 2) - (offer_window_height / 2));
@@ -489,6 +491,7 @@ public class Deal extends Game  {
             offer_window.setResizable(false);
             offer_window.setLayout(new FlowLayout());
             offer_window.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            offer_window.getRootPane().setBorder(BorderFactory.createLineBorder(Color.white, 4));
 
             file = new File("./Graphics/Game/last_exchange.bmp");
             try {
@@ -598,6 +601,8 @@ public class Deal extends Game  {
         }
 
         briefcase_opened_window = new JFrame("Opening case number " + (temp + 1));
+        briefcase_opened_window.setUndecorated(true);
+        briefcase_opened_window.getRootPane().setBorder(BorderFactory.createLineBorder(Color.white, 4));
         int briefcase_opened_window_width = 272, briefcase_opened_window_height = 320;
         briefcase_opened_window.setSize(briefcase_opened_window_width, briefcase_opened_window_height);
         briefcase_opened_window.setLocation((int)(getLocation().getX() + getSize().getWidth() / 2) - (briefcase_opened_window_width / 2), (int)(getLocation().getY() + getSize().getHeight() / 2) - (briefcase_opened_window_height / 2));
@@ -758,6 +763,8 @@ public class Deal extends Game  {
 
         setEnabled(false);
         briefcase_opened_window = new JFrame("Opening your case (" + my_briefcase.getNumber() +")");
+        briefcase_opened_window.setUndecorated(true);
+        briefcase_opened_window.getRootPane().setBorder(BorderFactory.createLineBorder(Color.white, 4));
         int briefcase_opened_window_width = 272, briefcase_opened_window_height = 360;
         briefcase_opened_window.setSize(briefcase_opened_window_width, briefcase_opened_window_height);
         briefcase_opened_window.setLocation((int)(getLocation().getX() + getSize().getWidth() / 2) - (briefcase_opened_window_width / 2), (int)(getLocation().getY() + getSize().getHeight() / 2) - (briefcase_opened_window_height / 2));
